@@ -13,6 +13,12 @@ class CrmLead(models.Model):
         store=True,
         help='Country detected based on the phone number'
     )
+    country_flag = fields.Char(
+        string='Country Flag',
+        compute='_compute_possible_country',
+        store=True,
+        help='Flag emoji for the detected country'
+    )
 
     def set_date_closed_editable(self):
         """Method to toggle date_closed editability"""
@@ -61,3 +67,4 @@ class CrmLead(models.Model):
                     flag = "🇦🇺"
 
             lead.possible_country = country
+            lead.country_flag = flag

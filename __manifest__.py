@@ -1,20 +1,20 @@
 {
     'name': 'Tijus CRM Customizations',
-    'version': '1.0',
-    'category': 'Sales/CRM',
-    'summary': 'Custom enhancements for CRM module',
+    'version': '17.0.1.0.0',
+    'category': 'CRM',
+    'summary': 'Custom CRM enhancements for Tijus',
     'description': """
-        This module adds country detection from phone numbers in CRM leads.
-        Features:
-        - Auto-detect country from phone numbers
-        - Display country flags in kanban view
+Custom CRM module with additional features:
+- Editable closed date
+- Country detection from phone numbers with flag display
     """,
+    'author': 'Tijus',
     'depends': ['crm'],
     'data': [
         'views/crm_lead_views.xml',
+        # Include other existing files
     ],
     'installable': True,
     'application': False,
     'auto_install': False,
-    'license': 'LGPL-3',
 }
