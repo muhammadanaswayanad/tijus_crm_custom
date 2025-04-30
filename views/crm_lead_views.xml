@@ -6,10 +6,9 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_lead_view_form"/>
         <field name="arch" type="xml">
-            <!-- Add possible country field after phone field -->
-            <xpath expr="//field[@name='phone']" position="after">
+            <field name="phone" position="after">
                 <field name="possible_country"/>
-            </xpath>
+            </field>
         </field>
     </record>
 
@@ -19,14 +18,11 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
         <field name="arch" type="xml">
-            <!-- Add flag to the kanban card - using a safer XPath -->
-            <xpath expr="//div[hasclass('oe_kanban_content')]" position="inside">
-                <t t-if="record.country_flag.value">
-                    <div class="float-end" title="Detected Country">
-                        <span t-esc="record.country_flag.value"/>
-                    </div>
-                </t>
-            </xpath>
+            <div class="oe_kanban_details" position="inside">
+                <span t-if="record.country_flag.raw_value" class="float-end" title="Detected Country">
+                    <span t-esc="record.country_flag.value"/>
+                </span>
+            </div>
         </field>
     </record>
     
@@ -36,14 +32,11 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads_opportunity"/>
         <field name="arch" type="xml">
-            <!-- Add flag to the opportunity kanban card - using a safer XPath -->
-            <xpath expr="//div[hasclass('oe_kanban_content')]" position="inside">
-                <t t-if="record.country_flag.value">
-                    <div class="float-end" title="Detected Country">
-                        <span t-esc="record.country_flag.value"/>
-                    </div>
-                </t>
-            </xpath>
+            <div class="oe_kanban_details" position="inside">
+                <span t-if="record.country_flag.raw_value" class="float-end" title="Detected Country">
+                    <span t-esc="record.country_flag.value"/>
+                </span>
+            </div>
         </field>
     </record>
 </odoo>

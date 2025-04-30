@@ -12,7 +12,7 @@ Custom CRM module with additional features:
     'depends': ['crm'],
     'data': [
         'views/crm_lead_views.xml',
-        # Include other existing view files
+        # ...other data files...
     ],
     'installable': True,
     'application': False,
