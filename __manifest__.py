@@ -11,7 +11,7 @@ Custom CRM module with additional features:
     'author': 'Tijus',
     'depends': ['crm'],
     'data': [
-        # Only include the working views file
+        # Only include the verified working file
         'views/crm_lead_views.xml',
     ],
     'installable': True,

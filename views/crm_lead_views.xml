@@ -39,4 +39,6 @@
             </xpath>
         </field>
     </record>
+    
+    <!-- NOTE: There should be no other records in this file -->
 </odoo>
