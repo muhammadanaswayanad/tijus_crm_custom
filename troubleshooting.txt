@@ -1,0 +1,22 @@
+Troubleshooting Steps for XML View Error:
+
+1. Search your module directory for XML files containing "action_view_sale_quotation":
+   $ grep -r "action_view_sale_quotation" /home/tl/code/custom_addons/tijus_crm_custom/
+
+2. If any file is found (besides this troubleshooting guide):
+   - Move it to a backup location
+   - Or fix the problematic XPath in that file
+
+3. Check if there are multiple XML files trying to modify the same views:
+   $ find /home/tl/code/custom_addons/tijus_crm_custom/ -name "*.xml" | grep -v crm_lead_views.xml
+
+4. Try uninstalling and reinstalling the module:
+   - Use the Odoo Apps menu
+   - Uninstall the module
+   - Delete any data from ir_ui_view that references your module
+   - Reinstall the module
+
+5. If all else fails, try this SQL fix (in Odoo's database manager):
+   DELETE FROM ir_ui_view WHERE name='crm.lead.form.custom';
+   
+   Then restart Odoo and reinstall your module.
