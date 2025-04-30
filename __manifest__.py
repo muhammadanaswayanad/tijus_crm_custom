@@ -9,10 +9,12 @@ Custom CRM module with additional features:
 - Country detection from phone numbers with flag display
     """,
     'author': 'Tijus',
-    'depends': ['crm'],  # Add 'sale_crm' if you need sale integration
+    'depends': ['crm'],
     'data': [
-        'views/crm_views.xml',  # Load this first
-        'views/crm_lead_views.xml',  # Then load your working view
+        # First load the file with empty/fixed content
+        'views/crm_views.xml',
+        # Then load the working view file
+        'views/crm_lead_views.xml',
     ],
     'installable': True,
     'application': False,

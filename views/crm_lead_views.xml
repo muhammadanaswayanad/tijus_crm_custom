@@ -18,7 +18,7 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('oe_kanban_content')]" position="inside">
+            <xpath expr="//div[contains(@class, 'oe_kanban_content')]" position="inside">
                 <div t-if="record.country_flag.raw_value" class="float-end" title="Detected Country">
                     <span t-esc="record.country_flag.value"/>
                 </div>
@@ -32,7 +32,7 @@
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_kanban_view_leads_opportunity"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('oe_kanban_content')]" position="inside">
+            <xpath expr="//div[contains(@class, 'oe_kanban_content')]" position="inside">
                 <div t-if="record.country_flag.raw_value" class="float-end" title="Detected Country">
                     <span t-esc="record.country_flag.value"/>
                 </div>
