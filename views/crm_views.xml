@@ -1,6 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Remove the problematic XPath that's causing the error -->
-    <!-- If you need some sale integration functionality, we can add it back properly -->
+    <!-- Remove the problematic XPath that's referencing a non-existent button -->
+    <!-- Original problematic code was:
+    <xpath expr="//button[@name='action_view_sale_quotation']" position="attributes">
+        ...
+    </xpath>
+    -->
     
-    <!-- Add any other view customizations here that belong in this file -->
+    <!-- If you need to modify sale-related buttons, you would need to:
+         1. Add a dependency on 'sale_crm' in your manifest
+         2. Use the correct parent view
+    -->
 </odoo>
